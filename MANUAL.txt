@@ -1,0 +1,8 @@
+-----------------------TEXT-TO-HYPERTEXT VERSION 1 MANUAL-----------------------
+Contents
+1. Formatting
+
+
+CHAPTER 1: Formatting
+If your text file has thrown an Error 1, your file is formatted incorrectly. Here is the correct way to format your file:
+1) Make sure that the first line of the file has 2 newlines after it.
