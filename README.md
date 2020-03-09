@@ -7,4 +7,4 @@ Creates br and p tags for 1 and 2 consecutive newlines respectively
 
 ##### Planned Features:
 Add support for more kinds of tags.<br>
-Add support for Windows(CRLF) and Mac(CR) newline formats.
+Add support for Windows(CRLF)
