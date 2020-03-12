@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "header.h"
 
 /*FUNCTION PROTOTYPES*/
 void puttag(FILE *fp, char *tag);
@@ -17,6 +18,7 @@ int main()
   char htmlname[256] = ""; /*handles name of converted file*/
   char title[128] = ""; /*handles the title of the webpage*/
   char errormsg[256] = "Hey, there's been an error. The program will be stopped and there should be a message below.";
+  char css[256] = ""; /*handles the filepath to the CSS, found in the config file.*/
   FILE *txt; /*file pointer for text file*/
   FILE *html; /*file pointer for html file*/
 
@@ -53,6 +55,8 @@ int main()
   fprintf(html, "<!DOCTYPE html>");
   puttag(html, "html");
   puttag(html, "head");
+  confcss(css, "/etc/tth/tth.conf"); /*gets the filepath for the css from tth.conf*/
+  fprintf(html, "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n", css); /*prints the external css link*/
   puttag(html, "title");
   /*reads the start of txt until it finds a newline; prints all characters it finds along the way*/
   ch = fgetc(txt);
@@ -144,12 +148,4 @@ void puttag(FILE *fp, char *tag)
 void closetag(FILE *fp, char *tag)
 {
   fprintf(fp, "\n</%s>\n", tag);
-}
-
-/*adds character "ch" to string "str"*/
-void addchar(char *str, char ch)
-{
-  int i = strlen(str);
-  str[i] = ch;
-  str[i + 1] = '\0';
 }
