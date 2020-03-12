@@ -1,8 +1,15 @@
 -----------------------TEXT-TO-HYPERTEXT VERSION 1 MANUAL-----------------------
 Contents
 1. Formatting
+2. Configuration
 
 
 CHAPTER 1: Formatting
 If your text file has thrown an Error 1, your file is formatted incorrectly. Here is the correct way to format your file:
 1) Make sure that the first line of the file has 2 newlines after it.
+2) A newline creates a linebreak <br> tag.
+3) Two consecutive newlines end the current paragraph with </p> and open a new one with <p>.
+
+Chapter 2: Configuration
+TTH has a few configuration options, and each has a dedicated line to put it on. If you do not wish to assign an option, start the line with a '#' or just leave it blank.
+Line 1) This is the filepath for the CSS file you want to use. If the HTML file will be used on a web server, this path should be relative to the site root or the file itself, rather than the system root.
